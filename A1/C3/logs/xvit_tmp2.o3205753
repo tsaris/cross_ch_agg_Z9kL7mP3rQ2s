@@ -1,0 +1,181 @@
+
+Lmod is automatically replacing "cce/18.0.1" with "gcc-native/13.2".
+
+
+Lmod is automatically replacing "PrgEnv-cray/8.6.0" with "PrgEnv-gnu/8.6.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-libsci/24.11.0     2) cray-mpich/8.1.31     3) darshan-runtime/3.4.6-mpi
+
+
+Lmod is automatically replacing "gcc-native/13.2" with "gcc/12.2.0".
+
+
+Inactive Modules:
+  1) darshan-runtime
+
+The following have been reloaded with a version change:
+  1) cray-libsci/24.11.0 => cray-libsci/23.09.1.1
+  2) cray-mpich/8.1.31 => cray-mpich/8.1.27
+  3) libfabric/1.22.0 => libfabric/1.20.1
+
+Lmod has detected the following error: These module(s) or extension(s) exist
+but cannot be loaded as requested: "darshan-runtime"
+   Try: "module spider darshan-runtime" to see how to load the module(s).
+
+
+
+for i in {orbit,orbit_token,orbit_token_agg,orbit_hier,orbit_linear}; do for j in {2,}; do for k in {512,}; do python train.py \ configs/ERA5-100million-91variables.yaml \ --max_epochs 1 \ --fa2 \ --fsdp_size 1 \ --simple_ddp_size 1 \ --seq_par_size 1 \ --tensor_par_size \ --batch_size $j \ --arch $i \ --channels $k \ --imagex 128 \ --imagey 256 \ --embed_dim 2048 \ --depth 32 \ --num_heads 32 echo "sleeping..." sleep 5 echo "Done" done done done
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:33:58,484] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:33:58,484] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+sleeping...
+sleeping...
+Done
+Done
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:10,639] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:10,639] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+sleeping...
+sleeping...
+Done
+Done
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:22,798] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:22,798] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+sleeping...
+sleeping...
+Done
+Done
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:34,984] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:34,984] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+sleeping...
+sleeping...
+Done
+Done
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:47,262] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+--> total memory per gpu (GB) = 63.9844
+[2025-03-16 18:34:47,262] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+/lustre/orion/world-shared/stf218/atsaris/DEEPCAM_2022/new_env/miniconda/env_rocm/lib/python3.8/site-packages/torchvision-0.18.0a0+4c0f441-py3.8-linux-x86_64.egg/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+usage: train.py [-h] [--real] [--fa2] [--arch ARCH] [--channels CHANNELS]
+                [--imagex IMAGEX] [--imagey IMAGEY] [--embed_dim EMBED_DIM]
+                [--depth DEPTH] [--num_heads NUM_HEADS]
+                [--fsdp_size FSDP_SIZE] [--simple_ddp_size SIMPLE_DDP_SIZE]
+                [--seq_par_size SEQ_PAR_SIZE]
+                [--tensor_par_size TENSOR_PAR_SIZE] [--batch_size BATCH_SIZE]
+                [--max_epochs MAX_EPOCHS]
+                yaml_config
+train.py: error: argument --tensor_par_size: expected one argument
+sleeping...
+sleeping...
+Done
+Done
+0.01user 0.03system 1:03.87elapsed 0%CPU (0avgtext+0avgdata 17408maxresident)k
+2806inputs+40outputs (10major+3154minor)pagefaults 0swaps

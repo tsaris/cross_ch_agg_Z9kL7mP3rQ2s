@@ -1,0 +1,61 @@
+seed_everything: 42
+
+# ---------------------------- TRAINER -------------------------------------------
+trainer:
+  max_epochs: 10000
+  checkpoint_path: "/proj/tsarisa/tmp/100_million_91variables_new_linear"
+  checkpoint_filename: "multi_last"
+
+  resume_from_checkpoint: False
+  #resume_from_checkpoint: "${trainer.default_root_dir}/checkpoints/last.ckpt"
+
+# ---------------------------- PARALLELISM -------------------------------------
+parallelism:
+  cpu_offloading: False
+# ---------------------------- MODEL -------------------------------------------
+model:
+  lr: 0.01
+  beta_1: 0.9
+  beta_2: 0.95
+  weight_decay: 1e-5
+  warmup_steps: 10
+  max_steps: 20
+  warmup_start_lr: 1e-8
+  eta_min: 1e-8
+
+  net:
+    class_path: climax.arch.ClimaX
+    init_args:
+      default_vars: [
+        "R","G","B",
+"W7N" ,"TXN" ,"D6V" ,"8Z7" ,"QNY" ,"QBR" ,"QOM" ,"IMY" ,"DGZ" ,"UY8" ,"EMJ" ,"DXK" ,"NSH" ,"Z4V" ,"O8Y" ,"RA6" ,"QDP" ,"6BF" ,"X8M" ,"B61" ,"61N" ,"A8K" ,"CN5" ,"NF9" ,"CRB" ,"4RF" ,"SAO" ,"ZA6" ,"A6P" ,"EME" ,"TVJ" ,"SR7" ,"J6U" ,"GE6" ,"OGJ" ,"Y4M" ,"TEF" ,"601" ,"CS6" ,"2N3" ,"4HM" ,"CEL" ,"XFH" ,"40J" ,"JBR" ,"94X" ,"PI7" ,"CGA" ,"U1A" ,"EY3" ,"GBW" ,"VW0" ,"TT5" ,"43R" ,"XAK" ,"WS0" ,"FRW" ,"X9X" ,"QA7" ,"JCH" ,"HFQ" ,"EP3" ,"Z3F" ,"JIU" ,"K8O" ,"4TP" ,"GNL" ,"HLC" ,"L7R" ,"WSZ" ,"0X1" ,"GHZ" ,"KJ9" ,"F7F" ,"H4I","I53" ,"YOI" ,"YK6" ,"YEC" ,"JVR" ,"V47" ,"TXP" ,"XPI" ,"4FX" ,"FNW" ,"I94" ,"U5X" ,"I10" ,"OFY" ,"CHF" ,"6MU" ,"923" ,"K81" ,"8NF" ,"FY1" ,"NX4" ,"YUG" ,"8Y1" ,"BWQ" ,"FLJ" ,"9DF" ,"OBB" ,"B7R" ,"DB7" ,"SH1" ,"G2Y" ,"CR4" ,"26W" ,"QWK" ,"45X" ,"25D" ,"2G7" ,"5I5" ,"52R" ,"KIU" ,"K02" ,"B3K" ,"16C" ,"7T8" ,"9Z1" ,"5VG" ,"MIR" ,"NBI" ,"FMU" ,"HTH" ,"VNJ" ,"Y3O" ,"KGJ" ,"9VO" ,"HKU" ,"OKP" ,"54D" ,"KBJ" ,"F24" ,"WBJ" ,"B2M" ,"VSV" ,"JZM" ,"BPX" ,"EKE" ,"UHE" ,"KF5" ,"TYL" ,"S3E" ,"NLF" ,"NNK" ,"WII" ,"FS6" ,"JWH" ,"K1X" ,"QWR" ,"GWX" ,"1GB" ,"O7P" ,"ALX" ,"TQZ" ,"4BL" ,"UUD" ,"NS6" ,"IA5" ,"1T8" ,"LUN" ,"FAA" ,"C0R" ,"DUI" ,"NP5" ,"88J" ,"5X8" ,"A64" ,"1NB" ,"CQK" ,"0UX" ,"E23" ,"WCZ" ,"CSZ" ,"AG5" ,"IQN" ,"X0B" ,"S95" ,"S4N" ,"IZB" ,"JTV" ,"H87" ,"UCJ" ,"UVM" ,"22N" ,"P4G" ,"8QH" ,"775" ,"Q4A" ,"KI7" ,"PCT" ,"A8M" ,"KJ7" ,"7W5" ,"XQ6" ,"Q3K" ,"AZS" ,"23S" ,"5LT" ,"WAI" ,"VQ1" ,"BFG" ,"IOY" ,"IZ7" ,"FCO" ,"2KJ" ,"DF6" ,"UXO" ,"7K5" ,"A3A" ,"XSW" ,"JHB" ,"7XL" ,"M01" ,"EWU" ,"1CW" ,"8IH" ,"MYA" ,"3P8" ,"R6H" ,"W0G" ,"Q0S" ,"4VR" ,"K2G" ,"7M5" ,"77Y" ,"AN8" ,"E7N" ,"K2N" ,"02I" ,"CZY" ,"738" ,"G0B" ,"Q9T" ,"FZF" ,"WJ9" ,"6P0" ,"QQX" ,"0GV" ,"516" ,"PBP" ,"25S" ,"YGN" ,"47U" ,"54E" ,"NAK" ,"IET" ,"256" ,"QXK" ,"JBX" ,"COZ" ,"V5U" ,"VG4" ,"198" ,"EDT" ,"A5V" ,"080" ,"2L9" ,"OXJ" ,"DGL" ,"1AQ" ,"JXZ" ,"TWF" ,"248" ,"4NF" ,"KCD" ,"61Z" ,"B3R" ,"R6U" ,"XGF" ,"EFV" ,"32S" ,"C64" ,"606" ,"XGK" ,"OOJ" ,"7L0" ,"XXD" ,"K9Y" ,"PET" ,"6PU" ,"GMY" ,"OCP" ,"6YV" ,"5AU" ,"6EQ" ,"ICF" ,"JV9" ,"1OW" ,"EVL" ,"C3N" ,"6LH" ,"L3H" ,"Z55" ,"6XD" ,"37V" ,"68M" ,"RNT" ,"8ND" ,"GU5" ,"QW5" ,"VYW" ,"3AQ" ,"8H8" ,"QG5" ,"E64" ,"DF9" ,"X5C" ,"15Q" ,"3KP" ,"LFV" ,"SRT" ,"SAM" ,"IKB" ,"YLV" ,"4FM" ,"6Z3" ,"910" ,"BLL" ,"AYL" ,"XDS" ,"TUY" ,"4GQ" ,"SZ8" ,"76V" ,"ZJG" ,"B6V" ,"N6B" ,"00B" ,"IEM" ,"H4B" ,"1JM" ,"PJA" ,"597" ,"AYY" ,"M89","60M" ,"UE1" ,"5GU" ,"541" ,"2AQ" ,"VY8" ,"GDT" ,"RSI" ,"C1Q" ,"B0H" ,"5KR" ,"04V" ,"G61" ,"HR3" ,"FOD" ,"757" ,"OWT" ,"5OS" ,"QF9" ,"1W0" ,"SFA" ,"JU4" ,"NV2" ,"OMG" ,"GO7" ,"WBV" ,"741" ,"KW9" ,"3GK" ,"E2Z" ,"YB3" ,"T46" ,"B2I" ,"1Y8" ,"58P" ,"NX4" ,"YTR" ,"4L8" ,"B7F" ,"PA9" ,"CS3" ,"2TR" ,"P8E" ,"XLF" ,"UQ2" ,"73B" ,"IX7" ,"8ZP" ,"1UO" ,"DBX" ,"4SL" ,"K1F" ,"9OD" ,"QZC" ,"OG8" ,"54G" ,"SN9" ,"FEI" ,"6LZ" ,"JFS" ,"3SA" ,"YD5" ,"PTP" ,"QJQ" ,"Y92" ,"6LV" ,"TGT" ,"9EN" ,"MZY" ,"18U" ,"ZII" ,"9LD" ,"51X" ,"ZSQ" ,"VWM" ,"QH9" ,"BA3" ,"DLS" ,"G58" ,"VRW" ,"SBV" ,"CVW" ,"X3I" ,"DSU" ,"HNF" ,"LLI" ,"557" ,"XMI" ,"J31" ,"M5Q" ,"CIU" ,"S3P" ,"LVQ" ,"O8H" ,"QUI" ,"WJQ" ,"R4Z" ,"WB5" ,"GL6" ,"PE4" ,"3G8" ,"XY0" ,"OBR" ,"7BZ" ,"O5T" ,"1OP" ,"IPK" ,"TCR" ,"XXM" ,"21C" ,"SBV" ,"4SL" ,"WIE" ,"A40" ,"AKQ" ,"PPO" ,"PAV" ,"QOX" ,"6N6" ,"AKJ" ,"UBM" ,"2F3" ,"CI2" ,"8PX" ,"ZUN" ,"PLM" ,"UCK" ,"5V0" ,"WZP" ,"AOJ" ,"WWO" ,"005" ,"KB3" ,"Y4U" ,"SFO" ,"JUK" ,"GVA" ,"EQ3" ,"35G" ,"8X0" ,"Q4I" ,"YCJ" ,"Y5A" ,"JAW" ,"KML" ,"01I" ,"SCH" ,"RJO" ,"DHT" ,"KVE" ,"AAO" ,"U4E" ,"S3H" ,"59B" ,"JIX" ,"D5Y" ,"JB2" ,"OOB" ,"GXK" ,"O6J",
+      ]
+      img_size: [192, 384]
+      patch_size: 6
+      embed_dim: 512
+      depth: 8
+      decoder_depth: 2
+      num_heads: 16
+      mlp_ratio: 4
+      drop_path: 0.1
+      drop_rate: 0.1
+      aggregated_variables: 1
+      mask_ratio: 0.75
+
+# ---------------------------- DATA -------------------------------------------
+data:
+  dict_root_dirs: {
+    #'mpi-esm': '/proj/tsarisa/data/Million-AID-small', # 100
+    #'mpi-esm': '/proj/tsarisa/data/S2_tmp',
+    'mpi-esm': '/proj/tsarisa/cp_from_home/data/appl_data_pt_medium',
+    #'mpi-esm': '/proj/tsarisa/cp_from_home/data/appl_data',
+  }
+  dict_in_variables: {
+    'mpi-esm': [
+        "R","G","B",
+"W7N" ,"TXN" ,"D6V" ,"8Z7" ,"QNY" ,"QBR" ,"QOM" ,"IMY" ,"DGZ" ,"UY8" ,"EMJ" ,"DXK" ,"NSH" ,"Z4V" ,"O8Y" ,"RA6" ,"QDP" ,"6BF" ,"X8M" ,"B61" ,"61N" ,"A8K" ,"CN5" ,"NF9" ,"CRB" ,"4RF" ,"SAO" ,"ZA6" ,"A6P" ,"EME" ,"TVJ" ,"SR7" ,"J6U" ,"GE6" ,"OGJ" ,"Y4M" ,"TEF" ,"601" ,"CS6" ,"2N3" ,"4HM" ,"CEL" ,"XFH" ,"40J" ,"JBR" ,"94X" ,"PI7" ,"CGA" ,"U1A" ,"EY3" ,"GBW" ,"VW0" ,"TT5" ,"43R" ,"XAK" ,"WS0" ,"FRW" ,"X9X" ,"QA7" ,"JCH" ,"HFQ" ,"EP3" ,"Z3F" ,"JIU" ,"K8O" ,"4TP" ,"GNL" ,"HLC" ,"L7R" ,"WSZ" ,"0X1" ,"GHZ" ,"KJ9" ,"F7F" ,"H4I","I53" ,"YOI" ,"YK6" ,"YEC" ,"JVR" ,"V47" ,"TXP" ,"XPI" ,"4FX" ,"FNW" ,"I94" ,"U5X" ,"I10" ,"OFY" ,"CHF" ,"6MU" ,"923" ,"K81" ,"8NF" ,"FY1" ,"NX4" ,"YUG" ,"8Y1" ,"BWQ" ,"FLJ" ,"9DF" ,"OBB" ,"B7R" ,"DB7" ,"SH1" ,"G2Y" ,"CR4" ,"26W" ,"QWK" ,"45X" ,"25D" ,"2G7" ,"5I5" ,"52R" ,"KIU" ,"K02" ,"B3K" ,"16C" ,"7T8" ,"9Z1" ,"5VG" ,"MIR" ,"NBI" ,"FMU" ,"HTH" ,"VNJ" ,"Y3O" ,"KGJ" ,"9VO" ,"HKU" ,"OKP" ,"54D" ,"KBJ" ,"F24" ,"WBJ" ,"B2M" ,"VSV" ,"JZM" ,"BPX" ,"EKE" ,"UHE" ,"KF5" ,"TYL" ,"S3E" ,"NLF" ,"NNK" ,"WII" ,"FS6" ,"JWH" ,"K1X" ,"QWR" ,"GWX" ,"1GB" ,"O7P" ,"ALX" ,"TQZ" ,"4BL" ,"UUD" ,"NS6" ,"IA5" ,"1T8" ,"LUN" ,"FAA" ,"C0R" ,"DUI" ,"NP5" ,"88J" ,"5X8" ,"A64" ,"1NB" ,"CQK" ,"0UX" ,"E23" ,"WCZ" ,"CSZ" ,"AG5" ,"IQN" ,"X0B" ,"S95" ,"S4N" ,"IZB" ,"JTV" ,"H87" ,"UCJ" ,"UVM" ,"22N" ,"P4G" ,"8QH" ,"775" ,"Q4A" ,"KI7" ,"PCT" ,"A8M" ,"KJ7" ,"7W5" ,"XQ6" ,"Q3K" ,"AZS" ,"23S" ,"5LT" ,"WAI" ,"VQ1" ,"BFG" ,"IOY" ,"IZ7" ,"FCO" ,"2KJ" ,"DF6" ,"UXO" ,"7K5" ,"A3A" ,"XSW" ,"JHB" ,"7XL" ,"M01" ,"EWU" ,"1CW" ,"8IH" ,"MYA" ,"3P8" ,"R6H" ,"W0G" ,"Q0S" ,"4VR" ,"K2G" ,"7M5" ,"77Y" ,"AN8" ,"E7N" ,"K2N" ,"02I" ,"CZY" ,"738" ,"G0B" ,"Q9T" ,"FZF" ,"WJ9" ,"6P0" ,"QQX" ,"0GV" ,"516" ,"PBP" ,"25S" ,"YGN" ,"47U" ,"54E" ,"NAK" ,"IET" ,"256" ,"QXK" ,"JBX" ,"COZ" ,"V5U" ,"VG4" ,"198" ,"EDT" ,"A5V" ,"080" ,"2L9" ,"OXJ" ,"DGL" ,"1AQ" ,"JXZ" ,"TWF" ,"248" ,"4NF" ,"KCD" ,"61Z" ,"B3R" ,"R6U" ,"XGF" ,"EFV" ,"32S" ,"C64" ,"606" ,"XGK" ,"OOJ" ,"7L0" ,"XXD" ,"K9Y" ,"PET" ,"6PU" ,"GMY" ,"OCP" ,"6YV" ,"5AU" ,"6EQ" ,"ICF" ,"JV9" ,"1OW" ,"EVL" ,"C3N" ,"6LH" ,"L3H" ,"Z55" ,"6XD" ,"37V" ,"68M" ,"RNT" ,"8ND" ,"GU5" ,"QW5" ,"VYW" ,"3AQ" ,"8H8" ,"QG5" ,"E64" ,"DF9" ,"X5C" ,"15Q" ,"3KP" ,"LFV" ,"SRT" ,"SAM" ,"IKB" ,"YLV" ,"4FM" ,"6Z3" ,"910" ,"BLL" ,"AYL" ,"XDS" ,"TUY" ,"4GQ" ,"SZ8" ,"76V" ,"ZJG" ,"B6V" ,"N6B" ,"00B" ,"IEM" ,"H4B" ,"1JM" ,"PJA" ,"597" ,"AYY" ,"M89","60M" ,"UE1" ,"5GU" ,"541" ,"2AQ" ,"VY8" ,"GDT" ,"RSI" ,"C1Q" ,"B0H" ,"5KR" ,"04V" ,"G61" ,"HR3" ,"FOD" ,"757" ,"OWT" ,"5OS" ,"QF9" ,"1W0" ,"SFA" ,"JU4" ,"NV2" ,"OMG" ,"GO7" ,"WBV" ,"741" ,"KW9" ,"3GK" ,"E2Z" ,"YB3" ,"T46" ,"B2I" ,"1Y8" ,"58P" ,"NX4" ,"YTR" ,"4L8" ,"B7F" ,"PA9" ,"CS3" ,"2TR" ,"P8E" ,"XLF" ,"UQ2" ,"73B" ,"IX7" ,"8ZP" ,"1UO" ,"DBX" ,"4SL" ,"K1F" ,"9OD" ,"QZC" ,"OG8" ,"54G" ,"SN9" ,"FEI" ,"6LZ" ,"JFS" ,"3SA" ,"YD5" ,"PTP" ,"QJQ" ,"Y92" ,"6LV" ,"TGT" ,"9EN" ,"MZY" ,"18U" ,"ZII" ,"9LD" ,"51X" ,"ZSQ" ,"VWM" ,"QH9" ,"BA3" ,"DLS" ,"G58" ,"VRW" ,"SBV" ,"CVW" ,"X3I" ,"DSU" ,"HNF" ,"LLI" ,"557" ,"XMI" ,"J31" ,"M5Q" ,"CIU" ,"S3P" ,"LVQ" ,"O8H" ,"QUI" ,"WJQ" ,"R4Z" ,"WB5" ,"GL6" ,"PE4" ,"3G8" ,"XY0" ,"OBR" ,"7BZ" ,"O5T" ,"1OP" ,"IPK" ,"TCR" ,"XXM" ,"21C" ,"SBV" ,"4SL" ,"WIE" ,"A40" ,"AKQ" ,"PPO" ,"PAV" ,"QOX" ,"6N6" ,"AKJ" ,"UBM" ,"2F3" ,"CI2" ,"8PX" ,"ZUN" ,"PLM" ,"UCK" ,"5V0" ,"WZP" ,"AOJ" ,"WWO" ,"005" ,"KB3" ,"Y4U" ,"SFO" ,"JUK" ,"GVA" ,"EQ3" ,"35G" ,"8X0" ,"Q4I" ,"YCJ" ,"Y5A" ,"JAW" ,"KML" ,"01I" ,"SCH" ,"RJO" ,"DHT" ,"KVE" ,"AAO" ,"U4E" ,"S3H" ,"59B" ,"JIX" ,"D5Y" ,"JB2" ,"OOB" ,"GXK" ,"O6J",
+    ],
+  }
+  batch_size: 8
+  num_workers: 4
+  pin_memory: True
